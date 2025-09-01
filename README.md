@@ -1,6 +1,6 @@
 # interest_calculator
 
-## Types of Interest Calculators
+## 🧮 Types of Interest Calculators
 
 | Type                          | Description                                                      | Use Case Example                              |
 |-------------------------------|------------------------------------------------------------------|-----------------------------------------------|
@@ -15,9 +15,17 @@
 | Inflation-Adjusted Interest   | Accounts for purchasing power loss over time.                     | Long-term investment planning                 |
 | Tax-Adjusted Interest         | Calculates post-tax returns on interest income.                   | Retirement accounts, taxable investments      |
 
-## Year Basis Options
+## 📆 Year Basis Options
 
 | Basis                 | Days/Year | Common Use Cases                                      |
 |-----------------------|-----------|------------------------------------------------------|
 | Actual/Actual (365)   | 365       | Most consumer loans, savings accounts, U.S. Treasury instruments |
 | Banker's Rule (360)   | 360       | Corporate bonds, commercial loans, international finance         |
+
+## 🔍 Nominal vs. Real vs. Effective
+
+| Type           | Adjusts For Inflation? | Adjusts For Compounding? | Used For                                 |
+|----------------|-----------------------|-------------------------|------------------------------------------|
+| Nominal Rate   | ❌ No                  | ❌ No                   | Quoted rates on loans/investments        |
+| Real Rate      | ✅ Yes                 | ❌ No                   | Purchasing power & economic analysis     |
+| Effective Rate | ❌ No                  | ✅ Yes                  | True cost of borrowing or yield          |
