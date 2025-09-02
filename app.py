@@ -33,6 +33,7 @@ if __name__ == "__main__":
         }
         for key, value in interest_options.items():
             print(f"{key}. {value['name']}")
+       
         
         choice = input("Enter your choice ({}): ".format("/".join(interest_options.keys())))
         selected_option = interest_options.get(choice)
@@ -43,7 +44,7 @@ if __name__ == "__main__":
             os.execl(sys.executable, sys.executable, *sys.argv)
            
         selected_function = selected_option["function"]
-
+        print("\n")
 
         if choice == "1":
             print("\nSimple Interest")
