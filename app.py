@@ -5,6 +5,8 @@ from calculators.amortized import *
 from calculators.daily import calculate_daily_interest
 from calculators.tax_adjusted import *
 from calculators.effective_rate import calculate_effective_rate
+from calculators.inflation_adjusted import calculate_inflation_adjusted_rate
+from calculators.continuous import calculate_continuous_compounded
 import os
 import sys
 
@@ -24,8 +26,10 @@ if __name__ == "__main__":
             "5": {"name": "Daily Interest", "function": calculate_daily_interest},
             "6": {"name": "Tax-Adjusted Interest", "function":calculate_tax_adjusted_income},
             "7": {"name": "Real After Tax Interest", "function": calculate_real_after_tax_interest},
-            "8": {"name": "Effective Rate", "function": calculate_effective_rate},
-            "10":{"name": "Exit Application","function":None}
+            "8": {"name": "Effective Interest Rate (EIR)", "function": calculate_effective_rate},
+            "9": {"name": "Inflation Adjusted Interest", "function": calculate_inflation_adjusted_rate},
+            "10": {"name": "Continuously Compounded","function":calculate_continuous_compounded},
+            "11":{"name": "Exit Application","function":None}
         }
         for key, value in interest_options.items():
             print(f"{key}. {value['name']}")
@@ -120,6 +124,20 @@ if __name__ == "__main__":
             n_periods = int(n_periods) if n_periods.strip() else 1
             result = calculate_effective_rate(nominal,n_periods)
             print(f"Effective Rate: {round(result * 100, 2)}%")
+
+        elif choice == "9":
+            nominal = float(input("Please enter an nominal rate: "))
+            inflation = float(input("Please enter an inflation rate: "))
+            result = calculate_inflation_adjusted_rate(nominal, inflation)
+            print(f"The inflation Adjusted Rate is: {round(result * 100, 2)}%")
+
+        elif choice == "10":
+            print("\nContinuously Compounded Amount")
+            principal = float(input("Please enter the principal amount: "))
+            annual_rate = float(input("Please enter your annual rate: "))
+            time_in_years = int(input("Please enter the time in years: "))
+            result = calculate_continuous_compounded(principal, annual_rate, time_in_years)
+            print(f"The continuous compunded amount is ${round(result,2)}")
 
         else:
             print("Exiting by user choice.")
