@@ -1,10 +1,10 @@
 {
     "configurations": [
         {
-            "name": "Python Debugger: Python File",
+            "name": "Python: Run vanilla_swap_demo",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}"
+            "module": "calculators.interest_rate_swap.examples.vanilla_swap_demo"
         }
     ]
 }
