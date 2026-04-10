@@ -9,11 +9,18 @@ def calculate_accrued_interest(principal: float, annual_rate: float, days_accrue
         year_basis (int, optional): The number of days in a year for interest calculation. Defaults to 365.
 
     Returns:
-        dict: A dictionary containing:
-            - "Principal": The principal amount, rounded to 2 decimal places.
-            - "Rate": The annual rate as a decimal, rounded to 2 decimal places.
-            - "Accrued Interest": The calculated accrued interest, rounded to 2 decimal places.
+        dict: 
+            - "Accrued Interest in dollars": The calculated accrued interest, rounded to 2 decimal places.
     """
     rate_decimal = annual_rate / 100
     accrued_interest = rate_decimal / year_basis * days_accrued * principal
     return round(accrued_interest, 2)
+
+
+if __name__ == "__main__":
+    principal = 1000
+    annual_rate = 5
+    days_accrued = 10
+    year_basis = 365
+    result = calculate_accrued_interest(1000,5,10,365)
+    print(f"Accrued Interest: ${result}")
